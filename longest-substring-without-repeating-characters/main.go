@@ -12,13 +12,17 @@ func lengthOfLongestSubstring(s string) (length int) {
 	}
 	length = 1
 	for i := 0; i < len(s); i++ {
-		set := make(map[uint8]bool)
-		set[s[i]] = true
+		// 字符的ASCII范围在0-127，所以这里申明了map的key类型为uint8
+		dict := make(map[uint8]bool)
+		dict[s[i]] = true
 		for j := i + 1; j < len(s); j++ {
-			if _, ok := set[s[j]]; ok {
+			// 判断字符是否在map中，如果存在就直接跳出循环
+			if _, ok := dict[s[j]]; ok {
 				break
 			}
-			set[s[j]] = true
+			// 将字符放入map中
+			dict[s[j]] = true
+			// 每次都计算最大值
 			cMax := j - i + 1
 			if cMax > length {
 				length = cMax
@@ -65,15 +69,16 @@ func lengthOfLongestSubstringOptimize(s string) (max int) {
 func lengthOfLongestSubstringGod(s string) int {
 	var Length int
 	var s1 string
-	left := 0
-	right := 0
-	s1 = s[left:right]
-	for ; right < len(s); right++ {
-
-		if index := strings.IndexByte(s1, s[right]); index != -1 {
-			left += index + 1
+	x := 0
+	y := 0
+	s1 = s[x:y]
+	for ; y < len(s); y++ {
+		// strings.IndexByte 用于判断y对应的字符是否在[x,y)中，不存在返回-1
+		if index := strings.IndexByte(s1, s[y]); index != -1 {
+			// 如果存在的话，x直接跳到index的后一位
+			x += index + 1
 		}
-		s1 = s[left : right+1]
+		s1 = s[x : y+1]
 		if len(s1) > Length {
 			Length = len(s1)
 		}
@@ -84,5 +89,5 @@ func lengthOfLongestSubstringGod(s string) int {
 
 func main() {
 	var s = "bbbbb"
-	fmt.Println(lengthOfLongestSubstringOptimize(s))
+	fmt.Println(lengthOfLongestSubstringGod(s))
 }
