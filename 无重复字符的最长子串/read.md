@@ -16,7 +16,7 @@
 
 ## 解题思路
 **常规思路**：两层循环字符串，并且我们需要一个 **Map字典** 来标记哪些字符已经出现过，流程如下：
-![](https://cdn.learnku.com/uploads/images/202004/09/21280/RmA2a4GFKo.png!large)
+![](https://cdn.learnku.com/uploads/images/202004/10/21280/IOCSRU9j1k.jpg!large)
 
 这个题目，其实主要的考点在于对**滑动窗口**的理解。
 > 滑动窗口：**滑动窗口是数组、字符串问题中常用的抽象概念。**
@@ -25,6 +25,6 @@
 则它将变为 [i+1, j+1)[i+1,j+1)（左闭，右开）。
 
 那么借用**滑动窗口**的概念，如何来解题呢？我这里画了一张示意图，其中 **[X,Y)** 就是 **滑动窗口**：
-![](https://cdn.learnku.com/uploads/images/202004/09/21280/k1OKCaohkK.png!large)
+![](https://cdn.learnku.com/uploads/images/202004/10/21280/898heywllh.jpg!large)
 
 这里有**一个注意点**：当 **Y** 指向的字符在 **[X,Y)** 滑动窗口之间时，假设索引值为 **index**，这时候 **X** 是直接移动到 **index+1** 的位置。

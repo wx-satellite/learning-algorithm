@@ -10,7 +10,7 @@
 
 ## 解题思路
 这个题目的解法类似我们小时候算两个多位数的加法：**从低位开始相加，大于等于10时则取值的个位数，并向前进1**。
-![](https://cdn.learnku.com/uploads/images/202004/08/21280/k9gOZMFpOe.png!large)
+![](https://cdn.learnku.com/uploads/images/202004/10/21280/e9vHCtJ8bA.jpg!large)
 只不过现在多位数用链表来表示了并且最后的值用链表返回了而已。
 
 根据上面这个思路需要注意的是进位（ carry ），相加的时要加上 **carry** 的值。
@@ -18,7 +18,7 @@
 ## 实现流程
 假设我们有两条链表**L1**和**L2**，并且初始化了**carry为0**，**value为0**，**Point、Head指向一个初始结果链表**，其中**carry**表示低位的进位，**value**表示结果链表尾节点的值，**Ponit**指向尾节点用于添加节点存放**value**的值，**Head**始终指向结果链表的头节点。
 代码实现思路我画成了流程：**从上到下，从左到右**
-![](https://cdn.learnku.com/uploads/images/202004/08/21280/KRXWgwd3LM.png!large)
+![](https://cdn.learnku.com/uploads/images/202004/10/21280/0Z9oLJsh0w.jpg!large)
 
 ## 总结
 每天进步一点点，加油！
