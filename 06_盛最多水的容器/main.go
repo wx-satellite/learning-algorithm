@@ -11,16 +11,20 @@ func maxArea(height []int) int {
 	)
 
 	for i < j {
+		// H 的 计算
 		if height[j] > height[i] {
 			minHeight = height[i]
 		} else {
 			minHeight = height[j]
 		}
+
+		// 记录面积，也就是纳水量
 		newMax := (j - i) * minHeight
 		if newMax > max {
 			max = newMax
 		}
 
+		// 移动高度小的指针，如果相等则一起移动
 		if height[j] > height[i] {
 			i++
 		} else if height[j] < height[i] {
