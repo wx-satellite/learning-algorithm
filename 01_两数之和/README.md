@@ -5,6 +5,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;给定 nums = [2, 7, 11, 15]，target = 9
 &nbsp;&nbsp;&nbsp;&nbsp;因为 nums[0] + nums[1] = 2 + 7 = 9
 &nbsp;&nbsp;&nbsp;&nbsp;所以返回 [0, 1]
+来源：力扣
 
 简单来说就是给定一个数组，让你找到和为 **target** 的两个元素的索引。
 
