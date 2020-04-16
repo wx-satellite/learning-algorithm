@@ -72,7 +72,7 @@ func lengthOfLongestSubstringGod(s string) int {
 	x := 0
 	y := 0
 	s1 = s[x:y]
-	for ; y < len(s); y++ {
+	for y < len(s) {
 		// strings.IndexByte 用于判断y对应的字符是否在[x,y)中，不存在返回-1
 		if index := strings.IndexByte(s1, s[y]); index != -1 {
 			// 如果存在的话，x直接跳到index的后一位
@@ -82,12 +82,13 @@ func lengthOfLongestSubstringGod(s string) int {
 		if len(s1) > Length {
 			Length = len(s1)
 		}
+		y++
 	}
 
 	return Length
 }
 
 func main() {
-	var s = "bbbbb"
+	var s = "bbtablud"
 	fmt.Println(lengthOfLongestSubstringGod(s))
 }
