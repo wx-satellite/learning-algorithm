@@ -77,7 +77,7 @@ func lengthOfLongestSubstringGod(s string) int {
 		if index := strings.IndexByte(s1, s[y]); index != -1 {
 			// 如果存在的话，x直接跳到index的后一位。
 			// 至于为什么是 x += index + 1 而不是 x = index + 1 是因为 index 是根据 s1这个子串获得的， 而 x 的值
-			// 在下一步求 s1 的时候是相对于 s原串 的。
+			// 在下一步求 s1 的时候是相对于 s原串 的。gi
 			x += index + 1
 		}
 		s1 = s[x : y+1]
