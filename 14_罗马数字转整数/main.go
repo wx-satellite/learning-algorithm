@@ -92,6 +92,36 @@ func romanToInt1(s string) int {
 	return res
 }
 
+func romanToInt2(s string) int {
+	res := 0
+	i := 0
+
+	// 将上面的函数，改成map
+	m := map[byte]int{
+		'I': 1,
+		'V': 5,
+		'X': 10,
+		'L': 50,
+		'C': 100,
+		'D': 500,
+		'M': 1000,
+	}
+	// 跳出循环之后，i刚好指向字符串s的最后一个字符
+	for ; i < len(s)-1; i ++ {
+		cur := m[s[i]]
+		next := m[s[i+1]]
+		// 比较值，如果当前值比下一个值小则减去当前值，反之则加上当前值
+		if cur < next {
+			res -= cur
+		} else {
+			res += cur
+		}
+	}
+	// 注意最后一个值需要加上
+	res += m[s[i]]
+	return res
+}
+
 
 
 func main() {
