@@ -2,12 +2,14 @@ package main
 
 import "fmt"
 
+// 二维数组的行坐标规律、列坐标规律其实很容易发现，**3*3 小正方形** 的坐标规律还是比较难发现的。
 func isValidSudoku(board [][]byte) bool {
 
 	// 数字 1-9 在每一行只能出现一次。
 	for i := 0; i < 9; i++ {
 		isExist := make(map[byte]bool)
 		for j := 0; j < 9; j++ {
+			// 字符 '.' 的数值表示为 46
 			if 46 != board[i][j] {
 				v := isExist[board[i][j]]
 				if v {
